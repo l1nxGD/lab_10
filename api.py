@@ -5,10 +5,11 @@ class Api:
 
       def __init__(self, cityName):
             self.cityName = cityName
-            self.apiKey = ""
+            
 
       def getData(self):
-            r = requests.post(f"https://api.openweathermap.org/data/2.5/weather?q={self.cityName}&appid={self.apiKey}")
+            apiKey = ''
+            r = requests.post(f"https://api.openweathermap.org/data/2.5/weather?q={self.cityName}&appid={apiKey}")
             data = loads(r.text)
 
             return data
